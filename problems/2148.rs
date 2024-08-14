@@ -1,28 +1,8 @@
-use std::io::stdin;
-
-fn count_elements(nums: Vec<i32>) -> i32 {
+pub fn count_elements(nums: Vec<i32>) -> i32 {
     let _max: i32 = *nums.iter().max().unwrap();
     let _min: i32 = *nums.iter().min().unwrap();
 
     nums.into_iter().filter(|&x| x != _max && x != _min).count() as i32
-}
-
-fn main() {
-    let mut valores_input: String = String::new();
-    stdin().read_line(&mut valores_input).expect("");
-
-    let valores: i32 = valores_input.trim().parse::<i32>().unwrap();
-
-    let mut nums: Vec<i32> = Vec::with_capacity(valores as usize);
-
-    for _ in 0..valores {
-        let mut input: String = String::new();
-        stdin().read_line(&mut input).expect("");
-
-        nums.push(input.trim().parse::<i32>().unwrap());
-    }
-
-    println!("{:?}", count_elements(nums));
 }
 
 #[cfg(test)]
