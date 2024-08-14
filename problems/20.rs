@@ -1,6 +1,4 @@
-use std::io;
-
-fn is_valid(s: String) -> bool {
+pub fn is_valid(s: String) -> bool {
     let mut vector: Vec<char> = Vec::new();
 
     for i in s.chars() {
@@ -16,13 +14,6 @@ fn is_valid(s: String) -> bool {
     }
 
     vector.is_empty()
-}
-
-fn main() {
-    let mut s: String = String::new();
-    io::stdin().read_line(&mut s).expect("Erro de leitura do input");
-
-    println!("{}", is_valid(s));
 }
 
 #[cfg(test)]
