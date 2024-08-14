@@ -1,7 +1,6 @@
-use std::io::stdin;
 use std::collections::HashMap;
 
-fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut map: HashMap<i32, usize> = HashMap::with_capacity(nums.len());
     let mut resp: Vec<i32> = Vec::with_capacity(2 as usize);
 
@@ -10,6 +9,7 @@ fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
             Some(&i) => {
                 resp.push(i as i32);
                 resp.push(index as i32);
+                break;
             },
             None => {
                 map.insert(target-num, index);
