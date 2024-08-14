@@ -20,29 +20,6 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     resp
 }
 
-fn main() {
-    let mut valores_input: String = String::new();
-    stdin().read_line(&mut valores_input).expect("");
-
-    let num_len: i32 = valores_input.trim().parse::<i32>().unwrap();
-    let mut nums: Vec<i32> = Vec::with_capacity(num_len as usize);
-
-    for _ in 0..num_len {
-        let mut input: String = String::new();
-        stdin().read_line(&mut input).expect("");
-
-        let valor: i32 = input.trim().parse::<i32>().unwrap();
-        nums.push(valor);
-    }
-
-    let mut target_input: String = String::new();
-    stdin().read_line(&mut target_input).expect("");
-
-    let target: i32 = target_input.trim().parse::<i32>().unwrap();
-
-    println!("{:?}", two_sum(nums, target));
-}
-
 #[cfg(test)]
 mod tests {
     use crate::two_sum;
