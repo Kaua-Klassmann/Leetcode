@@ -1,7 +1,6 @@
-use std::io;
 use std::collections::HashMap;
 
-fn roman_to_int(s: String) -> i32 {
+pub fn roman_to_int(s: String) -> i32 {
     let mut resul: i32 = 0;
     let mut maior: i32 = 0;
     let map: HashMap<char, i32> = HashMap::from([
@@ -26,14 +25,6 @@ fn roman_to_int(s: String) -> i32 {
     }
 
     resul
-}
-
-fn main() {
-    let mut input: String = String::new();
-    io::stdin().read_line(&mut input).expect("Erro de leitura do input");
-    input = String::from(input.trim());
-
-    println!("{}", {roman_to_int(input)});
 }
 
 #[cfg(test)]
