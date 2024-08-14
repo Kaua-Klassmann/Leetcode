@@ -1,6 +1,4 @@
-use std::io;
-
-fn final_value_after_operations(operations: Vec<String>) -> i32 {
+pub fn final_value_after_operations(operations: Vec<String>) -> i32 {
     let mut resul: i32 = 0;
 
     for i in &operations{
@@ -12,24 +10,6 @@ fn final_value_after_operations(operations: Vec<String>) -> i32 {
     }
 
     resul
-}
-
-fn main() {
-    let mut vector: Vec<String> = Vec::new();
-
-    while true {
-        let mut input: String = String::new();
-        io::stdin().read_line(&mut input).expect("Erro de leitura do input");
-        input = input.trim().to_string();
-
-        if input == "".to_string() {
-            break;
-        }
-
-        vector.push(input);
-    }
-
-    println!("{}", final_value_after_operations(vector));
 }
 
 #[cfg(test)]
