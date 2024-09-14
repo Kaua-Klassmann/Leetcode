@@ -3,15 +3,7 @@ use std::collections::HashSet;
 pub fn repeated_character(s: String) -> char {
     let mut set: HashSet<char> = HashSet::with_capacity(26);
 
-    for c in s.chars() {
-        if set.contains(&c) {
-            return c;
-        }
-
-        set.insert(c);
-    }
-
-    ' '
+    s.chars().find(|&c| !set.insert(c)).unwrap()
 }
 
 #[cfg(test)]
