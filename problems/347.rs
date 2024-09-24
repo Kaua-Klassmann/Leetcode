@@ -17,7 +17,7 @@ pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
         }
     });
 
-    heapq.into_iter().map(|num| num.1).collect::<Vec<i32>>()
+    heapq.into_iter().map(|num| num.1).collect()
 }
 
 #[cfg(test)]
