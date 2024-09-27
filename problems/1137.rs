@@ -1,8 +1,9 @@
 pub fn tribonacci(n: i32) -> i32 {
     if n < 2 {
-        return n
-    } else if n == 2 {
-        return 1
+        return n;
+    }
+    if n == 2 {
+        return 1;
     }
 
     let (mut a, mut b, mut c) = (0, 1, 1);
