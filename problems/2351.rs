@@ -2,7 +2,7 @@ pub fn repeated_character(s: String) -> char {
     let mut set: u32 = 0;
 
     for c in s.chars() {
-        let bit_masket = 1 << (c as u32 - 97);
+        let bit_masket: u32 = 1 << (c as u32 - 97);
 
         if set & bit_masket != 0 {
             return c;
