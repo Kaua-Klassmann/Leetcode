@@ -1,13 +1,21 @@
-use std::collections::HashSet;
-
 pub fn repeated_character(s: String) -> char {
-    let mut set: HashSet<char> = HashSet::with_capacity(26);
+    let mut set: u32 = 0;
 
-    s.chars().find(|&c| !set.insert(c)).unwrap()
+    for c in s.chars() {
+        let bit_masket = 1 << (c as u32 - 97);
+
+        if set & bit_masket != 0 {
+            return c;
+        }
+
+        set |= bit_masket;
+    }
+
+    ' '
 }
 
 #[cfg(test)]
-mod tests {
+mod test {
     use crate::repeated_character;
 
     #[test]
