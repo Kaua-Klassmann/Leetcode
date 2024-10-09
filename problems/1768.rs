@@ -1,7 +1,7 @@
 use std::str::Chars;
 
 pub fn merge_alternately(word1: String, word2: String) -> String {
-    let mut resp: Vec<char> = Vec::with_capacity(word1.len() + word2.len());
+    let mut resp: String = String::with_capacity(word1.len() + word2.len());
     let mut chars2: Chars<> = word2.chars();
     let mut chars1: Chars<> = word1.chars();
 
@@ -26,7 +26,7 @@ pub fn merge_alternately(word1: String, word2: String) -> String {
     resp.extend(chars1);
     resp.extend(chars2);
     
-    resp.into_iter().collect()
+    resp
 }
 
 #[cfg(test)]
