@@ -5,6 +5,6 @@ pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
         nums1[index as usize] = num;
         index += 1;
     }
-
+ 
     nums1.sort();
 }
